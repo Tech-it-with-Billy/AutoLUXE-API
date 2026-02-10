@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-1!5ta2%5&o6$fzq-fpc^c+_d^yu*7%fd#^vnt^$cy4083v0gi%
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'AutoLUXE-API-V1.1.onrender.com',
+    'autoluxe-api-v1-1.onrender.com',
     'localhost',
     '127.0.0.1'
 ]
