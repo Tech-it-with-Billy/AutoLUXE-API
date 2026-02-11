@@ -1,7 +1,6 @@
 from django.db import models
 import uuid
 
-# Create your models here.
 class Vehicles(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     make = models.CharField(max_length=50)
@@ -14,10 +13,10 @@ class Vehicles(models.Model):
     seats = models.IntegerField()
     gas_type = models.CharField(max_length=50)
     created_at = models.DateTimeField(auto_now_add=True)
-    
-    def __str__(self):
-        return f'{self.make} {self.model} {self.year} - {self.price}'
 
+    def __str__(self):
+        return f'{self.make} {self.model} {self.year} - {self.cost}'
+    
 class VehicleImages(models.Model):
     vehicle_id = models.ForeignKey(Vehicles, on_delete=models.CASCADE, related_name='images')
-    image = models.ImageField(upload_to='vehicleImages')
+    image = models.ImageField(upload_to='vehicleImages/')
