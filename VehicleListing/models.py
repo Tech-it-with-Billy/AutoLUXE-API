@@ -6,7 +6,7 @@ class Vehicles(models.Model):
     make = models.CharField(max_length=50)
     model = models.CharField(max_length=50)
     body_type = models.CharField(max_length=50)
-    year = models.IntegerField()
+    year = models.PositiveIntegerField()
     cost = models.DecimalField(max_digits=10, decimal_places=2)
     engine = models.IntegerField()
     transmission = models.CharField(max_length=50)
