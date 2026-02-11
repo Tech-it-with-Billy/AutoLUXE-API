@@ -7,7 +7,7 @@ class Vehicles(models.Model):
     make = models.CharField(max_length=50)
     model = models.CharField(max_length=50)
     body_type = models.CharField(max_length=50)
-    year = models.DateField()
+    year = models.IntegerField()
     cost = models.DecimalField(max_digits=10, decimal_places=2)
     engine = models.IntegerField()
     transmission = models.CharField(max_length=50)
@@ -17,9 +17,6 @@ class Vehicles(models.Model):
     
     def __str__(self):
         return f'{self.make} {self.model} {self.year} - {self.price}'
-    
-    def save(self, *args, **kwargs):
-        super(*args, **kwargs)
 
 class VehicleImages(models.Model):
     vehicle_id = models.ForeignKey(Vehicles, on_delete=models.CASCADE, related_name='images')
