@@ -5,10 +5,7 @@ from VehicleListing.models import Vehicles
 class BookingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Bookings
-        fieldsets = (
-            "id", "vehicle_id", "customer_name", "customer_email", "start_date", 
-            "return_date", "pick_up", "drop_off", "days", "total", "created_at"
-        )
+        fields = '__all__'
         read_only_fields = ("id", "days", "total", "created_at")
     
     def validate(self, data):
